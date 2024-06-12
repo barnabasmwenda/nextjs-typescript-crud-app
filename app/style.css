@@ -1,0 +1,22 @@
+.hero {
+  flex-direction: column;
+}
+
+input,
+textarea {
+  background-color: transparent;
+  padding: 10px 16px;
+  outline: none;
+  border: 1px solid var(--color-gray);
+  transition: 0.3s;
+}
+
+input:hover,
+textarea:hover {
+  border: 1px solid var(--color-gray-darker);
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid var(--color-primary);
+}
