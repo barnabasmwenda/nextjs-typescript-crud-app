@@ -9,7 +9,7 @@ export default function Home() {
         <p className="mt-3">
           Organize your tasks efficiently, stay productive and achieve it!
         </p>
-        <Link href="/sign-in" className="primary-cta mt-3">
+        <Link href="/sign-up" className="primary-cta mt-3">
           Get started
         </Link>
       </section>
