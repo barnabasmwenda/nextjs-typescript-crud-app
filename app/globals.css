@@ -1,17 +1,17 @@
 :root {
   --background-color: #fff;
-  --color-primary: #181818;
+  --color-primary: #4169e1;
   --color-white: #fff;
-  --text-color: #333;
+  --color-text: #333;
   --color-black: #181818;
-  --color-gray: #f5f5f5;
-  --color-gray-darker: #ececec;
+  --color-gray: #f2f2f2;
+  --color-gray-darker: #dedede;
   --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-large: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
   --wrapper-padding: 0px 32px;
   --border-radius-small: 4px;
-  --border-radius-big: 10px;
+  --border-radius-big: 8px;
   --border-radius-semi-rounded: 25px;
   --border-radius-rounded: 50px;
 }
@@ -24,8 +24,12 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: var(--text-color);
+  font-family: "Roboto", sans-serif;
+  color: var(--color-text);
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 h1 {
@@ -97,8 +101,17 @@ a {
 }
 
 .primary-cta {
-  background-color: var(--color-black);
+  background-color: var(--color-primary);
   color: var(--color-white);
+}
+
+.primary-highlight,
+.primary-link {
+  color: var(--color-primary);
+}
+
+.primary-link {
+  text-decoration: underline;
 }
 
 .mt-1 {

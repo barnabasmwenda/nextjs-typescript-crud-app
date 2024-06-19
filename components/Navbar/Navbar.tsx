@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import "./Navbar.css";
@@ -8,16 +9,21 @@ const Navbar: React.FC = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    if (menuOpen) {
-      document.body.style.overflow = "none";
+
+    if (!menuOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
     }
   };
 
   return (
     <nav className="navbar wrapper-padding">
-      <div className="navContainer">
+      <div className="nav-container">
         <div className="logo">
-          <Link href="/">Achieve it.</Link>
+          <Link href="/">
+            <h1 className="primary-highlight">Achieve it.</h1>
+          </Link>
         </div>
         <div className="hamburger" onClick={toggleMenu}>
           <div className={`bar ${menuOpen ? "change" : ""}`}></div>
