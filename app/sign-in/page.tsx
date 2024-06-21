@@ -7,7 +7,7 @@ import { loginUser } from "@/utils/api";
 import Link from "next/link";
 
 const SignIn = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -16,11 +16,11 @@ const SignIn = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     try {
-      const response = await loginUser({ username, password });
+      const response = await loginUser({ email, password });
       localStorage.setItem("token", response.token);
-      router.push("/");
+      router.push("/privacy");
     } catch (error: any) {
-      setError(error.response.data || "Invalid username or password.");
+      setError(error?.response?.data || "Invalid username or password.");
     }
   };
 
@@ -31,12 +31,12 @@ const SignIn = () => {
         <h2 className="mt-2">Sign in</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Email</label>
             <input
-              type="text"
-              name="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="form-group mt-3">

@@ -1,7 +1,8 @@
 import axios from "axios";
+import { useRouter } from "next/router";
 
 const axiosClient = axios.create({
-  baseURL: process.env.PUBLIC_BASE_URL,
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -24,7 +25,7 @@ axiosClient.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response.status === 401) {
-      // redirect to login
+      // Handle unauthorized access (e.g., redirect to login)
     }
     return Promise.reject(error);
   }

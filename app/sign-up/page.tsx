@@ -15,7 +15,8 @@ const SignUp: React.FC = () => {
     event.preventDefault();
     try {
       await registerUser({ username, email, password });
-      alert("User created successfully!");
+      console.log("User created successfully!");
+      //Sign in automatically
     } catch (error: any) {
       setError(
         error.response.data ||

@@ -1,3 +1,5 @@
+import withAuth from "@/utils/withAuth";
+
 const Privacy: React.FC = () => {
   return (
     <main>
@@ -6,4 +8,4 @@ const Privacy: React.FC = () => {
   );
 };
 
-export default Privacy;
+export default withAuth(Privacy);

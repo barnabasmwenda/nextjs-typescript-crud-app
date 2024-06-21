@@ -7,7 +7,7 @@ interface RegisterRequestModel {
 }
 
 interface LoginRequestModel {
-  username: string;
+  email: string;
   password: string;
 }
 
